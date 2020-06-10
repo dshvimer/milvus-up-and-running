@@ -1,0 +1,21 @@
+version: '2.0'
+services:
+    notebook:
+        build:
+            context: ./notebook
+        ports:
+            - '8888:8888'
+        volumes:
+            - ./notebook:/home/jovyan
+        links:
+            - milvus
+    milvus:
+        image: milvusdb/milvus:0.9.1-cpu-d052920-e04ed5
+        ports:
+            - '19530:19530'
+            - '19121:19121'
+        volumes:
+            - ./milvus/db:/var/lib/milvus/db
+            - ./milvus/conf:/var/lib/milvus/conf
+            - ./milvus/logs:/var/lib/milvus/logs
+            - ./milvus/wal:/var/lib/milvus/wal

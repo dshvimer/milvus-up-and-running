@@ -1,0 +1,8 @@
+milvus/db/*
+milvus/logs/*
+milvus/wal/*
+notebook/.local
+notebook/.cache
+notebook/.ipynb_checkpoints
+notebook/.ipython
+notebook/.jupyter
